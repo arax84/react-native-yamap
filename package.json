@@ -4,10 +4,12 @@
   "description": "Yandex.MapKit and Yandex.Geocoder for react-native",
   "main": "build/index.js",
   "scripts": {
-    "prepare": "rm -rf build && tsc",
+    "clean": "rm -rf lib",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "yarn run clean && yarn build:modern && yarn build:legacy",
     "build:modern": "BABEL_ENV=modern babel src -d lib/modern/",
     "build:legacy": "BABEL_ENV=legacy babel src -d lib/legacy",
+    "prepare": "rm -rf build && tsc",
   },
   "homepage": "https://github.com/volga-volga/react-native-yamap",
   "keywords": ["react-native", "mapkit", "yandex", "yamap", "polygon", "polyline", "marker", "geocoder"],
