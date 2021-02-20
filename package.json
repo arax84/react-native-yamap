@@ -5,7 +5,9 @@
   "main": "build/index.js",
   "scripts": {
     "prepare": "rm -rf build && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:modern": "BABEL_ENV=modern babel src -d lib/modern/",
+    "build:legacy": "BABEL_ENV=legacy babel src -d lib/legacy",
   },
   "homepage": "https://github.com/volga-volga/react-native-yamap",
   "keywords": ["react-native", "mapkit", "yandex", "yamap", "polygon", "polyline", "marker", "geocoder"],
@@ -18,6 +20,7 @@
     "@types/react": "*",
     "@types/react-native": "*"
   },
+ 
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
